@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %} {% load static %} {% block title %}Crear
+{%endblock %} {% block content %}
+<main role="main">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto">
+        <h1>Confirmar eliminación</h1>
+        <p>¿Estás seguro de que deseas eliminar esta página?</p>
+        <form method="post">
+          {% csrf_token %}
+          <button type="submit">Eliminar</button>
+          <a href="{% url 'pages' %}">Cancelar</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
